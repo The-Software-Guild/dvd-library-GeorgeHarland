@@ -6,7 +6,11 @@ import java.util.List;
 
 public class DvdLibraryView {
 
-    private UserIO io = new UserIOConsoleImpl();
+    private UserIO io;
+
+    public DvdLibraryView(UserIO io) {
+        this.io = io;
+    }
 
     public int printMenuAndGetSelection() {
         io.print("Main Menu");
@@ -109,4 +113,8 @@ public class DvdLibraryView {
         io.print("Unknown Command!!!");
     }
 
+    public void displayErrorMessage(String errorMsg) {
+        io.print("=== ERROR ===");
+        io.print(errorMsg);
+    }
 }
